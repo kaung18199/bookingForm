@@ -43,7 +43,7 @@
                           <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                             <div class=" ">
                                 <p class=" text-sm">Time</p>
-                                <input type="time" name="" placeholder="enter your phone" id="" class=" border-b border-gray-400 w-full p-2 " v-model="bookingTime">
+                                <input type="time" name="" placeholder="enter your phone" id="" class=" border-b border-gray-400 w-full p-2 focus:ring-0 focus:border-transparent focus:outline-none" v-model="bookingTime">
                             </div>
                             <!-- <div class="space-y-4">
                               <div class="relative z-0">
@@ -54,7 +54,7 @@
                             <div class=" ">
                                 <p class=" text-sm">Payment</p>
                                 <!-- <input type="number" name="" placeholder="enter your phone" id="" class="  border  rounded-lg focus:ring-0 focus:border-transparent focus:outline-none w-full p-2"> -->
-                                <select name="" v-model="payment" id="" class=" border-b border-gray-400 w-full p-2">
+                                <select name="" v-model="payment" id="" class=" border-b border-gray-400 w-full p-2 focus:ring-0 focus:border-transparent focus:outline-none">
                                   <option value="">Choose Payment</option>
                                   <option value="K Pay">K Pay</option>
                                   <option value="Wave Pay">Wave Pay</option>
@@ -194,7 +194,7 @@
                       </div>
 
                       <!-- button -->
-                      <button class=" text-white w-full py-3 rounded-full bg-blue-700 hover:bg-blue-600">
+                      <button class=" text-white w-full py-3 rounded-full bg-blue-700 hover:bg-blue-600" @click="bookingNow">
                           Reserve
                       </button>
                   </div>
@@ -206,6 +206,8 @@
 </template>
 
 <script>
+
+import Swal from 'sweetalert2'
 
 // import('@fullcalendar/core/vdom');
 // import '@fullcalendar/core/main.min.css';
@@ -269,6 +271,15 @@ export default {
       // You can use startDate and endDate here to do whatever you need to do
 
       this.bookingDate =  this.startdate.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-') + ' -- ' +  this.enddate.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-')
+    },
+
+    bookingNow(){
+      Swal.fire({
+        title: 'Pending!',
+        text: 'Your Booking is Pending State',
+        icon: 'success',
+        // confirmButtonText: 'Cool'
+      })
     }
   },
   components: {
