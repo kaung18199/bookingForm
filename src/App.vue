@@ -1,41 +1,60 @@
 <template>
   <div class="  ">
-      <div class=" grid grid-cols-3 my-10 px-10 space-x-6">
-          <div class="col-span-3 sm:col-span-3 md:col-span-2">
+      <div class=" grid grid-cols-3 my-10 px-0 sm:px-0 md:px-10 lg:px-10 ">
+          <div class="col-span-3 sm:col-span-3 md:col-span-3 lg:col-span-2">
               <!-- booking form -->
               <div class=" w-full ">
                   <div class=" ">
-                      <div class=" mx-auto  rounded-2xl shadow-2xl   p-6 space-y-5 w-full">
-                          <div class=" grid grid-cols-2 gap-4">
-                            <div class=" space-y-4">
+                      <div class=" mx-auto  rounded-2xl shadow-md p-6 space-y-5 w-full">
+                          <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                            <!-- <div class=" space-y-4">
                                 <p>Name</p>
-                                <input type="text" name="" placeholder="enter your name" id="" class=" bg-indigo-100 bg-opacity-50  border  rounded-lg focus:ring-0 focus:border-transparent focus:outline-none  w-full p-2" v-model="name">
+                                <input type="text" name="" placeholder="Enter your name" id="" class=" bg-indigo-100 bg-opacity-50  border  rounded-lg focus:ring-0 focus:border-transparent focus:outline-none  w-full p-2" v-model="name">
+                            </div> -->
+                            <div class="relative z-0">
+                                <input type="text" id="floating_standard" v-model="name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="floating_standard" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
                             </div>
-                            <div class=" space-y-4">
+                            
+                            <!-- <div class=" space-y-4">
                                 <p>Email</p>
-                                <input type="email" name="" placeholder="enter your email" id="" class="  border bg-indigo-100 bg-opacity-50 rounded-lg focus:ring-0 focus:border-transparent focus:outline-none w-full p-2" v-model="email">
+                                <input type="email" name="" placeholder="Enter your email" id="" class="  border bg-indigo-100 bg-opacity-50 rounded-lg focus:ring-0 focus:border-transparent focus:outline-none w-full p-2" v-model="email">
+                            </div> -->
+                            <div class="relative z-0">
+                                <input type="email" id="floating_standard" v-model="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="floating_standard" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
                             </div>
                           </div>
-                          <div class=" space-y-4">
+                          <!-- <div class=" space-y-4">
                               <p>Phone</p>
-                              <input type="number" name="" placeholder="enter your phone" id="" class="  border bg-indigo-100 bg-opacity-50 rounded-lg focus:ring-0 focus:border-transparent focus:outline-none w-full p-2" v-model="phone">
+                              <input type="number" name="" placeholder="Enter your phone" id="" class="  border bg-indigo-100 bg-opacity-50 rounded-lg focus:ring-0 focus:border-transparent focus:outline-none w-full p-2" v-model="phone">
+                          </div> -->
+                          <div class="relative z-0 ">
+                              <input type="number" id="floating_standard" v-model="phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                              <label for="floating_standard" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone</label>
                           </div>
                           <div class="space-y-4">
-                              <p>Booking date</p>
+                              <p class=" text-md">Booking date</p>
                           </div>
-                          <div class=" w-[100%] overflow-y-hidden h-full">
-                            <FullCalendar v-bind:options="calendarOptions" ref="calendar" /> 
+                          <div class=" w-full overflow-y-hidden h-full">
+                            <FullCalendar v-bind:options="calendarOptions" ref="calendar" @select="handleSelect"/> 
                           </div>
-                          
-                          <div class=" grid grid-cols-2 gap-4">
-                            <div class=" space-y-4">
-                                <p>Time</p>
-                                <input type="time" name="" placeholder="enter your phone" id="" class="  border  rounded-lg focus:ring-0 focus:border-transparent focus:outline-none w-full p-2 bg-indigo-100 bg-opacity-50" v-model="bookingTime">
+                          <!-- <FullCalendar :options="calendarOptions" /> -->
+                          <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                            <div class=" ">
+                                <p class=" text-sm">Time</p>
+                                <input type="time" name="" placeholder="enter your phone" id="" class=" border-b border-gray-400 w-full p-2 " v-model="bookingTime">
                             </div>
-                            <div class=" space-y-4">
-                                <p>Payment</p>
+                            <!-- <div class="space-y-4">
+                              <div class="relative z-0">
+                                  <input type="time" id="floating_standard" v-model="bookingTime" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                  <label for="floating_standard" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Time</label>
+                              </div> 
+                            </div> -->
+                            <div class=" ">
+                                <p class=" text-sm">Payment</p>
                                 <!-- <input type="number" name="" placeholder="enter your phone" id="" class="  border  rounded-lg focus:ring-0 focus:border-transparent focus:outline-none w-full p-2"> -->
-                                <select name="" v-model="payment" id="" class="bg-indigo-100 bg-opacity-50 border  rounded-lg focus:ring-0 focus:border-transparent focus:outline-none w-full p-2">
+                                <select name="" v-model="payment" id="" class=" border-b border-gray-400 w-full p-2">
                                   <option value="">Choose Payment</option>
                                   <option value="K Pay">K Pay</option>
                                   <option value="Wave Pay">Wave Pay</option>
@@ -43,14 +62,24 @@
                                   <option value="Banking">Banking</option>
                                 </select>
                             </div>
+                            <!-- <div>
+                              <label for="underline_select" class="">Choose Payment</label>
+                              <select id="underline_select" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer" v-model="payment">
+                                  <option selected>Choose Payment</option>
+                                  <option value="K pay">K pay</option>
+                                  <option value="Wave pay">Wave pay</option>
+                                  <option value="CB pay">CB pay</option>
+                                  <option value="Banking">Banking</option>
+                              </select>
+                            </div> -->
                           </div>
                       </div>
                   </div>
               </div>
           </div>
-          <div class="col-span-3 sm:col-span-3 md:col-span-3 lg:col-span-1">
-              <div class="sticky top-8 flex justify-center items-center ">
-                  <div class=" mx-auto  border border-white rounded-2xl shadow-2xl   p-6 w-full space-y-5">
+          <div class="col-span-3 sm:col-span-3 md:col-span-3 lg:col-span-1 pt-3 sm:pt-3 md:pt-3 lg:pt-0 pl-0 sm:pl-0 md:pl-0 lg:pl-5">
+              <div class="sticky top-8 flex justify-center items-center w-full">
+                  <div class=" mx-auto  border border-white rounded-2xl shadow-md p-6 w-full space-y-5">
                       <div class=" border border-gray-300 rounded-3xl ">
                           <div class=" flex justify-start items-center space-x-4 p-4 border-b ">
                               <div>
@@ -198,10 +227,28 @@ export default {
       bookingTime : '',
       payment : '',
       date : '',
+      startdate : '',
+      enddate : '',
+      inputBoxHasValue: '',
 
       calendarOptions: {
         plugins: [ dayGridPlugin,timeGridPlugin,listGridPlugin, interactionPlugin ],
-        initialView: 'dayGridMonth'
+        initialView: 'dayGridMonth',
+        height: '100%',
+        contentHeight: 'auto',
+        aspectRatio: 2,
+        selectable: true,
+        selectOverlap: false,
+        select: this.handleSelect,
+        headerToolbar: {
+          
+          
+          
+        },
+        
+        // selectable: true,
+        selectMirror: true,
+        dayMaxEvents: true,
       }
       
     };
@@ -214,10 +261,21 @@ export default {
       this.bookingDate = this.date.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-')
   
     },
+
+    handleSelect(info) {
+      this.startdate = info.start
+      this.enddate = info.end
+      console.log(`Selected range: ${this.startdate} - ${this.enddate}`)
+      // You can use startDate and endDate here to do whatever you need to do
+
+      this.bookingDate =  this.startdate.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-') + ' -- ' +  this.enddate.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-')
+    }
   },
   components: {
     FullCalendar
   },
+
+
 
   mounted() {
     const calendarApi = this.$refs.calendar.getApi();
@@ -236,17 +294,31 @@ export default {
   .fc .fc-daygrid-day-frame:hover{
     background-color: rgb(231, 225, 225);
   }
-  .fc-scroller-liquid-absolute {
-      bottom: 0;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      overflow-y: hidden!important;
-      height: 100%!important;
-      width: 100%!important;
+  .calendar {
+    width: 100%!important;
+    height: 100%!important;
+    overflow: hidden;
   }
-  
+  .fc-daygrid-body {
+    width: 100%!important;
+  }
+  .fc-scrollgrid-section-body table{
+    width: 100%!important;
+  }
+  .fc-col-header{
+    width: 100%!important;
+  }
+  @media screen and (max-width: 767px) {
+    .fc-toolbar-chunk {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .fc-toolbar-title {
+      flex-basis: 100%;
+      margin-top: 10px;
+    }
+  }
 </style>
 
 
