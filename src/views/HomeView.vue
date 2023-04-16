@@ -9,7 +9,7 @@
             <LayoutVue/>
           </div>
           
-          <div class="col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-4 px-5 sm:px-5 md:px-5 lg:px-10 pb-5 " >
+          <div class="col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-4 px-5 sm:px-5 md:px-5 lg:px-5 pb-5 " >
               <!-- booking form -->
               
               <div class=" grid grid-cols-2 gap-4 ">
@@ -39,12 +39,12 @@
                   <div class=" mt-8 mb-2">
                       <p class=" text-lg font-medium text-gray-600"><i class="fa-solid text-indigo-300 fa-clock mr-2"></i>Confirm Time</p>
                   </div>
-                  <div class="col-span-1 h-[600px] md:h-[600px] lg:h-[617px] overflow-hidden overflow-y-auto border shadow">
+                  <div class="col-span-1 h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow">
 
                     <div class="w-full flex justify-center items-center py-4 border-b space-x-2">
-                      <div class=" border px-4 py-2 rounded cursor-pointer hover:bg-indigo-300 hover:text-white transition ease-in-out duration-700 shadow" :class="amPart == true ? 'bg-indigo-300' : ''" @click="amPartAction()">AM</div>
+                      <div class=" border px-4 py-2 rounded font-medium cursor-pointer hover:bg-indigo-500 hover:text-white transition ease-in-out duration-700 shadow" :class="amPart == true ? 'bg-indigo-500 text-white' : ''" @click="amPartAction()">AM</div>
                       <i class="fa-solid fa-arrows-left-right"></i>
-                      <div class=" border px-4 py-2 rounded cursor-pointer hover:bg-indigo-300 hover:text-white transition ease-in-out duration-700 shadow" :class="pmPart == true ? 'bg-indigo-300' : ''" @click="pmPartAction()">PM</div>
+                      <div class=" border px-4 py-2 rounded font-medium cursor-pointer hover:bg-indigo-500 hover:text-white transition ease-in-out duration-700 shadow" :class="pmPart == true ? 'bg-indigo-500 text-white' : ''" @click="pmPartAction()">PM</div>
                       
                     </div>
                     <div class=" p-5 grid grid-cols-1 text-center gap-3" v-if="amPart">
@@ -72,7 +72,7 @@
             <div></div>
             <div v-if="timeDateSelect">
             
-            <button class=" animate-pulse bg-gradient-to-l from-blue-700 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled " @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
+            <button class=" animate-pulse bg-indigo-500 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled " @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
             </div> 
             
           </div>
@@ -206,11 +206,6 @@ export default {
 
 </script>
 <style >
-
-  
-  .fc .fc-daygrid-day-frame:hover{
-    background-color: rgba(161, 189, 246, 0.645);
-  }
   .calendar {
     width: 100%!important;
     height: 100%!important;
@@ -234,7 +229,15 @@ export default {
       /* padding: 4px; */
       position: relative;
       z-index: 4;
-      padding: 29px 20px;
+      padding: 22px 20px;
+  }
+  .fc .fc-daygrid-day-number:hover {
+      /* padding: 4px; */
+      position: relative;
+      z-index: 4;
+      padding: 20px 25px;
+      background-color: rgb(136, 167, 247);
+      border-radius: 100%;
   }
   .fc-theme-standard td, .fc-theme-standard th {
       border: 0px solid var(--fc-border-color);
@@ -259,6 +262,25 @@ export default {
       margin: 0;
       font-weight: 500;
   }
+  .fc .fc-today-button {
+      background-color: var(--fc-button-bg-color);
+      border-color: var(--fc-button-border-color);
+      color: var(--fc-button-text-color);
+      display: none;
+  }
+  .fc .fc-button-primary {
+      background-color: #469ff8;
+      border-color: var(--fc-button-border-color);
+      color: var(--fc-button-text-color);
+  }
+  .fc .fc-button-primary:hover {
+      background-color: #09457d;
+      border-color: var(--fc-button-hover-border-color);
+      color: var(--fc-button-text-color);
+  }
+  .fc-button-group{
+    border: none;
+  }
   @media screen and (max-width: 767px) {
     .fc-toolbar-chunk {
       display: flex;
@@ -269,6 +291,7 @@ export default {
       flex-basis: 100%;
       margin-top: 10px;
     }
+    
   }
 </style>
 

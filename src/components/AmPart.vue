@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class=" p-5 grid grid-cols-3 text-center gap-3 animate__animated animate__flipInY ">
-    <div class="" v-for="(time,index) in times" :key="index" @click="bookingTimeGet(time)"><p class=" px-4 py-2 border rounded-full cursor-pointer hover:bg-indigo-400 hover:animate-pulse shadow	 hover:text-white transition ease-in-out duration-700" :class=" bookingTime == time ? 'animate-pulse bg-indigo-400 text-white' : ''">{{ time }}</p></div>
+    <div class="" v-for="(time,index) in times" :key="index" @click="bookingTimeGet(time)"><p class="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base px-4 py-2 border rounded-full cursor-pointer hover:bg-indigo-400 hover:animate-pulse shadow	 hover:text-white transition ease-in-out duration-700" :class=" bookingTime == time ? 'animate-pulse bg-indigo-400 text-white' : ''">{{ time }}</p></div>
   </div>
   </div>
 </template>
@@ -12,7 +12,7 @@ import { mapActions } from "vuex"
     name : 'AmPart',
     data () {
       return {
-        times : ['1:00 am','1:30 am','2:00 am','2:30 am','3:00 am','3:30 am','4:00 am','4:30 am','5:00 am','5:30 am','6:00 am','6:30 am','7:00 am','7:30 am','8:00 am','8:30 am','9:00 am','9:30 am','10:00 am','10:30 am','11:00 am','11:30 am','12:00 am','12:30 am'],
+        times : ['24:30','1:00','1:30','2:00','2:30','3:00','3:30','4:00','4:30','5:00','5:30','6:00','6:30','7:00','7:30','8:00','8:30','9:00','9:30','10:00','10:30','11:00','11:30','12:00'],
         bookingTime : '',
       }
       

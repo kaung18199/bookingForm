@@ -5,74 +5,74 @@
         <div class=" col-span-4">
           <LayoutVue/>
         </div>
-        <div class=" col-span-4 bg-center bg-no-repeat bg-[url('https://internationalschoolsinbangkok.com/wp-content/uploads/2019/02/header-img.jpg')] bg-gray-700 bg-blend-multiply">
+        <div class=" col-span-4 ">
           
           
           <div class=" flex justify-center items-center mx-auto ">
-            <div class=" px-4 py-5 my-6 border rounded w-[500px] bg-indigo-100 bg-opacity-50 shadow-lg">
-              <div class=" border rounded-2xl px-4 py-2 shadow-lg">
+            <div class=" px-4 py-5 my-6  w-[500px] ">
+              <div class=" border rounded-2xl px-4 py-2 shadow">
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-user text-3xl text-indigo-100"></i>
+                    <i class="fa-solid fa-user text-2xl text-indigo-500"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ name }}</h2>
-                    <p class=" text-sm text-indigo-100">Name</p>
+                    <p class=" text-sm text-indigo-400">Name</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-at text-3xl text-indigo-100"></i>
+                    <i class="fa-solid fa-at text-2xl text-indigo-500"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ email }}</h2>
-                    <p class=" text-sm text-indigo-100">Email</p>
+                    <p class=" text-sm text-indigo-400">Email</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-phone text-3xl text-indigo-100"></i>
+                    <i class="fa-solid fa-phone text-2xl text-indigo-500"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ phone }}</h2>
-                    <p class=" text-sm text-indigo-100">Phone</p>
+                    <p class=" text-sm text-indigo-400">Phone</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-map-location text-3xl text-indigo-100"></i>
+                    <i class="fa-solid fa-map-location text-2xl text-indigo-500"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ address }}</h2>
-                    <p class=" text-sm text-indigo-100">Address</p>
+                    <p class=" text-sm text-indigo-400">Address</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-calendar text-3xl text-indigo-100"></i>
+                    <i class="fa-solid fa-calendar text-2xl text-indigo-500"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ date }}</h2>
-                    <p class=" text-sm text-indigo-100">Booking Date</p>
+                    <p class=" text-sm text-indigo-400">Booking Date</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-clock text-3xl text-indigo-100"></i>
+                    <i class="fa-solid fa-clock text-2xl text-indigo-500"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ time }}</h2>
-                    <p class=" text-sm text-indigo-100">Booking Time</p>
+                    <p class=" text-sm text-indigo-400">Booking Time</p>
                   </div>
                   
                 </div>
                 <div class=" flex justify-start items-center space-x-8  py-2">
                   <div>
-                    <i class="fa-solid fa-hand-holding-dollar text-3xl text-indigo-100"></i>
+                    <i class="fa-solid fa-hand-holding-dollar text-2xl text-indigo-500"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ payment }}</h2>
-                    <p class=" text-sm text-indigo-100">Payment</p>
+                    <p class=" text-sm text-indigo-400">Payment</p>
                   </div>
                   
                 </div>
@@ -87,7 +87,7 @@
           <div></div>
           
           <!-- button -->
-          <button class=" animate-pulse bg-blue-500 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-blue-600" @click="bookingNow">
+          <button class=" animate-pulse bg-indigo-500 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-indigo-600" @click="bookingNow">
               Booking
           </button>
         </div>

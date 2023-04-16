@@ -5,13 +5,13 @@
         <div class=" col-span-4">
           <LayoutVue/>
         </div>
-        <div class=" col-span-4 bg-center bg-no-repeat bg-[url('https://internationalschoolsinbangkok.com/wp-content/uploads/2019/02/header-img.jpg')] bg-gray-300 bg-blend-multiply">
+        <div class=" col-span-4 bg-indigo-100">
           
           
-          <div class=" flex justify-center items-center mx-auto w-[300px] sm:w-[300px] md:w-[400px] lg:w-[600px]">
+          <div class=" flex justify-center items-center mx-auto w-[300px] sm:w-[500px] md:w-[500px] lg:w-[600px]">
             <div class=" px-4 py-5 my-6 space-y-8 w-full">
               <div class=" ">
-                  <p class=" text-lg font-medium text-gray-600"><i class="fa-regular fa-face-smile-beam mr-2 text-indigo-600"></i>Please, Fill this Form</p>
+                  <p class="text-sm sm:text-md  md:text-lg font-medium text-gray-600"><i class="fa-regular fa-face-smile-beam mr-2 text-indigo-600"></i>Please, Fill this Form</p>
               </div>
               <div class="relative">
                   <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer w-full " placeholder=" " v-model="namen"/>
@@ -40,7 +40,7 @@
           <div></div>
           <div >
           
-          <button class=" animate-pulse bg-gradient-to-l from-blue-500 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled " @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
+          <button class=" animate-pulse bg-indigo-500 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled " @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
           </div> 
           <!-- button -->
           <!-- <button class=" bg-indigo-500 px-10 py-2 text-white rounded cursor-pointer hover:bg-blue-600" @click="bookingNow" v-if="!timeDateSelect">
