@@ -11,28 +11,28 @@
           <div class=" flex justify-center items-center mx-auto my-20">
             <div class=" px-4 py-5 my-6 space-y-8">
               <div class=" ">
-                  <p class="text-sm sm:text-base md:text-lg font-medium text-gray-600"><i class="fa-regular fa-face-smile-beam mr-2 text-indigo-600"></i>Please, Choose the Payment Type</p>
+                  <p class="text-sm sm:text-base md:text-lg font-medium text-gray-600"><i class="fa-regular fa-face-smile-beam mr-2 text-orange-400"></i>Please, Choose the Payment Type</p>
               </div>
               <div class=" grid grid-cols-2 gap-4">
-                <div class=" flex justify-between items-center border-2 border-indigo-200 rounded-full py-2 px-4 hover:bg-indigo-300 hover:bg-opacity-30 hover:shadow-lg cursor-pointer hover:border-indigo-800 transition ease-in-out duration-700" :class="payment == 'KBZ pay' ? 'bg-indigo-300 bg-opacity-30 shadow-lg border-indigo-800' : ''" @click="Kaction()">
+                <div class=" flex justify-between items-center border-2 border-orange-200 rounded-full py-2 px-4 hover:bg-orange-300 hover:bg-opacity-50 hover:shadow-lg cursor-pointer hover:border-orange-400 transition ease-in-out duration-700" :class="payment == 'KBZ pay' ? 'bg-orange-300 bg-opacity-50 shadow-lg border-orange-400' : ''" @click="Kaction()">
                   <img src="https://play-lh.googleusercontent.com/cnKJYzzHFAE5ZRepCsGVhv7ZnoDfK8Wu5z6lMefeT-45fTNfUblK_gF3JyW5VZsjFc4" class="mr-4 w-8 h-8 rounded-full" alt="">
-                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-gray-600 ">KBZ Pay</p>
+                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-orange-600 ">KBZ Pay</p>
                 </div>
-                <div class=" flex justify-between items-center border-2 border-indigo-200 rounded-full py-2 px-4 hover:bg-indigo-300 hover:bg-opacity-30 hover:shadow-lg cursor-pointer hover:border-indigo-800 transition ease-in-out duration-700" :class="payment == 'Wave pay' ? 'bg-indigo-300 bg-opacity-30 shadow-lg border-indigo-800' : ''" @click="Waction()">
+                <div class=" flex justify-between items-center border-2 border-orange-200 rounded-full py-2 px-4 hover:bg-orange-300 hover:bg-opacity-50 hover:shadow-lg cursor-pointer hover:border-orange-400 transition ease-in-out duration-700" :class="payment == 'Wave pay' ? 'bg-orange-300 bg-opacity-50 shadow-lg border-orange-400' : ''" @click="Waction()">
                   <img src="https://yt3.googleusercontent.com/ytc/AGIKgqOLJcVuCnydxSdEE-SxX3B9-AUwFf84QU8faF1-ng=s900-c-k-c0x00ffffff-no-rj" class="mr-4 w-8 h-8 rounded-full" alt="">
-                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-gray-600">Wave Pay</p>
+                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-orange-600">Wave Pay</p>
                 </div>
-                <div class=" flex justify-between items-center border-2 border-indigo-200 rounded-full py-2 px-4 hover:bg-indigo-300 hover:bg-opacity-30 hover:shadow-lg cursor-pointer hover:border-indigo-800 transition ease-in-out duration-700" :class="payment == 'CB pay' ? 'bg-indigo-300 bg-opacity-30 shadow-lg border-indigo-800' : ''" @click="Caction()">
+                <div class=" flex justify-between items-center border-2 border-orange-200 rounded-full py-2 px-4 hover:bg-orange-300 hover:bg-opacity-50 hover:shadow-lg cursor-pointer hover:border-orange-400 transition ease-in-out duration-700" :class="payment == 'CB pay' ? 'bg-orange-300 bg-opacity-50 shadow-lg border-orange-400' : ''" @click="Caction()">
                   <img src="https://play-lh.googleusercontent.com/z-wRjDo9L-3c1-39ZH-VyKwofSHsmI79VH3T_pSqlj_fRhZSpc7zbDlFKS4hle0bLOk" class="mr-4 w-8 h-8 rounded-full" alt="">
-                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-gray-600">CB Pay</p>
+                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-orange-600">CB Pay</p>
                 </div>
-                <div class=" flex justify-between items-center border-2 border-indigo-200 rounded-full py-2 px-4 hover:bg-indigo-300 hover:bg-opacity-30 hover:shadow-lg cursor-pointer hover:border-indigo-800 transition ease-in-out duration-700" :class="payment == 'Paypal' ? 'bg-indigo-300 bg-opacity-30 shadow-lg border-indigo-800' : ''" @click="Paction()">
+                <div class=" flex justify-between items-center border-2 border-orange-200 rounded-full py-2 px-4 hover:bg-orange-300 hover:bg-opacity-50 hover:shadow-lg cursor-pointer hover:border-orange-400 transition ease-in-out duration-700" :class="payment == 'Paypal' ? 'bg-orange-300 bg-opacity-50 shadow-lg border-orange-400' : ''" @click="Paction()">
                   <img src="https://thumbs.dreamstime.com/b/paypal-logo-printed-paper-chisinau-moldova-september-internet-based-digital-money-transfer-service-128373487.jpg" class="mr-4 w-8 h-8 rounded-full" alt="">
-                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-gray-600">Paypal</p>
+                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-orange-600">Paypal</p>
                 </div>
-                <div class=" flex justify-between items-center border-2 border-indigo-200 rounded-full py-2 px-4 hover:bg-indigo-300 hover:bg-opacity-30 hover:shadow-lg cursor-pointer hover:border-indigo-800 transition ease-in-out duration-700" :class="payment == 'Visa pay' ? 'bg-indigo-300 bg-opacity-30 shadow-lg border-indigo-800' : ''" @click="Vaction()">
+                <div class=" flex justify-between items-center border-2 border-orange-200 rounded-full py-2 px-4 hover:bg-orange-300 hover:bg-opacity-50 hover:shadow-lg cursor-pointer hover:border-orange-400 transition ease-in-out duration-700" :class="payment == 'Visa pay' ? 'bg-orange-300 bg-opacity-50 shadow-lg border-orange-400' : ''" @click="Vaction()">
                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbGRTcA8FWCLvethhPJ_WppDb9ynlI1-nV8Q&usqp=CAU" class="mr-4 w-8 h-8 rounded-full" alt="">
-                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-gray-600">Visa Pay</p>
+                  <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-orange-600">Visa Pay</p>
                 </div>
               </div>
             
@@ -45,7 +45,7 @@
           <div></div>
           <div >
           
-          <button class=" animate-pulse bg-indigo-500 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled " @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
           </div> 
           <!-- button -->
           <!-- <button class=" bg-indigo-500 px-10 py-2 text-white rounded cursor-pointer hover:bg-blue-600" @click="bookingNow" v-if="!timeDateSelect">

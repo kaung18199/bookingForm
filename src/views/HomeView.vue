@@ -15,7 +15,7 @@
               <div class=" grid grid-cols-2 gap-4 ">
                 <div class=" col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1">
                   <div class=" mt-8 mb-2">
-                      <p class=" text-lg font-medium text-gray-600"><i class="fa-solid text-indigo-300 fa-calendar-days mr-2"></i>Confirm Date</p>
+                      <p class=" text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
                   </div>
                   <div class=" w-full col-span-1">
                       
@@ -37,14 +37,14 @@
                 </div>
                 <div class=" h-full col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1">
                   <div class=" mt-8 mb-2">
-                      <p class=" text-lg font-medium text-gray-600"><i class="fa-solid text-indigo-300 fa-clock mr-2"></i>Confirm Time</p>
+                      <p class=" text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
                   </div>
                   <div class="col-span-1 h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow">
 
                     <div class="w-full flex justify-center items-center py-4 border-b space-x-2">
-                      <div class=" border px-4 py-2 rounded font-medium cursor-pointer hover:bg-indigo-500 hover:text-white transition ease-in-out duration-700 shadow" :class="amPart == true ? 'bg-indigo-500 text-white' : ''" @click="amPartAction()">AM</div>
+                      <div class=" border px-4 py-2 rounded font-medium cursor-pointer hover:bg-orange-400 hover:text-white transition ease-in-out duration-700 shadow" :class="amPart == true ? 'bg-orange-400 text-white' : ''" @click="amPartAction()">AM</div>
                       <i class="fa-solid fa-arrows-left-right"></i>
-                      <div class=" border px-4 py-2 rounded font-medium cursor-pointer hover:bg-indigo-500 hover:text-white transition ease-in-out duration-700 shadow" :class="pmPart == true ? 'bg-indigo-500 text-white' : ''" @click="pmPartAction()">PM</div>
+                      <div class=" border px-4 py-2 rounded font-medium cursor-pointer hover:bg-orange-400 hover:text-white transition ease-in-out duration-700 shadow" :class="pmPart == true ? 'bg-orange-400 text-white' : ''" @click="pmPartAction()">PM</div>
                       
                     </div>
                     <div class=" p-5 grid grid-cols-1 text-center gap-3" v-if="amPart">
@@ -72,7 +72,7 @@
             <div></div>
             <div v-if="timeDateSelect">
             
-            <button class=" animate-pulse bg-indigo-500 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled " @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2 "></i></button>
             </div> 
             
           </div>
@@ -236,7 +236,7 @@ export default {
       position: relative;
       z-index: 4;
       padding: 20px 25px;
-      background-color: rgb(136, 167, 247);
+      background-color: rgb(251, 215, 171);
       border-radius: 100%;
   }
   .fc-theme-standard td, .fc-theme-standard th {
@@ -262,6 +262,7 @@ export default {
       margin: 0;
       font-weight: 500;
   }
+
   .fc .fc-today-button {
       background-color: var(--fc-button-bg-color);
       border-color: var(--fc-button-border-color);
@@ -269,14 +270,24 @@ export default {
       display: none;
   }
   .fc .fc-button-primary {
-      background-color: #469ff8;
-      border-color: var(--fc-button-border-color);
+      background-color: rgb(255, 147, 16);
+      /* border-color: var(--fc-button-border-color); */
+      border: 1px solid orange;
       color: var(--fc-button-text-color);
+      overflow: hidden;
   }
   .fc .fc-button-primary:hover {
-      background-color: #09457d;
-      border-color: var(--fc-button-hover-border-color);
+      background-color: rgba(255, 166, 0, 0.892);
+      /* border-color: none!important; */
       color: var(--fc-button-text-color);
+      box-shadow: none;
+      border: 1px solid #eabe0f;
+  }
+  .fc-button-group{
+    overflow: hidden;
+  }
+  .fc .fc-highlight {
+      background: rgb(251, 215, 171);
   }
   .fc-button-group{
     border: none;

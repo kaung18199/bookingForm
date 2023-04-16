@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class=" p-5 grid grid-cols-3 text-center gap-3 animate__animated animate__flipInY ">
-    <div class="" v-for="(time,index) in times" :key="index" @click="bookingTimeGet(time)"><p class="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base px-4 py-2 border rounded-full cursor-pointer hover:bg-indigo-400 hover:animate-pulse shadow	 hover:text-white transition ease-in-out duration-700" :class=" bookingTime == time ? 'animate-pulse bg-indigo-400 text-white' : ''">{{ time }}</p></div>
+    <div class="" v-for="(time,index) in times" :key="index" @click="bookingTimeGet(time)"><p class="text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base px-4 py-2 border rounded-full cursor-pointer hover:bg-orange-400  shadow	 hover:text-white transition ease-in-out duration-700" :class=" bookingTime == time ? ' bg-orange-400 text-white' : ''">{{ time }}</p></div>
   </div>
   </div>
 </template>

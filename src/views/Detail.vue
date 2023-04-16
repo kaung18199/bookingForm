@@ -13,66 +13,66 @@
               <div class=" border rounded-2xl px-4 py-2 shadow">
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-user text-2xl text-indigo-500"></i>
+                    <i class="fa-solid fa-user text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ name }}</h2>
-                    <p class=" text-sm text-indigo-400">Name</p>
+                    <p class=" text-sm text-orange-300">Name</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-at text-2xl text-indigo-500"></i>
+                    <i class="fa-solid fa-at text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ email }}</h2>
-                    <p class=" text-sm text-indigo-400">Email</p>
+                    <p class=" text-sm text-orange-300">Email</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-phone text-2xl text-indigo-500"></i>
+                    <i class="fa-solid fa-phone text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ phone }}</h2>
-                    <p class=" text-sm text-indigo-400">Phone</p>
+                    <p class=" text-sm text-orange-300">Phone</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-map-location text-2xl text-indigo-500"></i>
+                    <i class="fa-solid fa-map-location text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ address }}</h2>
-                    <p class=" text-sm text-indigo-400">Address</p>
+                    <p class=" text-sm text-orange-300">Address</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-calendar text-2xl text-indigo-500"></i>
+                    <i class="fa-solid fa-calendar text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ date }}</h2>
-                    <p class=" text-sm text-indigo-400">Booking Date</p>
+                    <p class=" text-sm text-orange-300">Booking Date</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-clock text-2xl text-indigo-500"></i>
+                    <i class="fa-solid fa-clock text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ time }}</h2>
-                    <p class=" text-sm text-indigo-400">Booking Time</p>
+                    <p class=" text-sm text-orange-300">Booking Time</p>
                   </div>
                   
                 </div>
                 <div class=" flex justify-start items-center space-x-8  py-2">
                   <div>
-                    <i class="fa-solid fa-hand-holding-dollar text-2xl text-indigo-500"></i>
+                    <i class="fa-solid fa-hand-holding-dollar text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-md font-medium ">{{ payment }}</h2>
-                    <p class=" text-sm text-indigo-400">Payment</p>
+                    <p class=" text-sm text-orange-300">Payment</p>
                   </div>
                   
                 </div>
@@ -87,7 +87,7 @@
           <div></div>
           
           <!-- button -->
-          <button class=" animate-pulse bg-indigo-500 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-indigo-600" @click="bookingNow">
+          <button class=" bg-orange-400 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-orange-500 hover:shadow-lg" @click="bookingNow">
               Booking
           </button>
         </div>
