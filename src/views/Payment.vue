@@ -45,7 +45,8 @@
           <div></div>
           <div >
           
-            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()" v-if="payment != null">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" v-if="payment == null">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
           </div> 
           <!-- button -->
           <!-- <button class=" bg-indigo-500 px-10 py-2 text-white rounded cursor-pointer hover:bg-blue-600" @click="bookingNow" v-if="!timeDateSelect">

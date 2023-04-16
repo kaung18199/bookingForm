@@ -72,7 +72,8 @@
             <div></div>
             <div v-if="timeDateSelect">
             
-            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()">Next<i class="fa-solid fa-angles-right ml-2 "></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()" v-if="date != '' && time != ''">Next<i class="fa-solid fa-angles-right ml-2 "></i></button>
+              <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" v-if="date == '' || time == ''">Next<i class="fa-solid fa-angles-right ml-2 "></i></button>
             </div> 
             
           </div>
@@ -98,7 +99,7 @@ import LayoutVue from '../components/Layout.vue'
 import AmPartVue from '../components/AmPart.vue'
 import PmPartVue from '../components/PmPart.vue'
 
-import { mapActions } from 'vuex'
+import { mapActions,mapGetters } from 'vuex'
 
 export default {
   name: 'HomeView',
@@ -137,7 +138,10 @@ export default {
     };
   },
   computed: {
-    
+    ...mapGetters({
+      date : "date",
+      time : 'time'
+    })
   },
   methods: {
     ...mapActions({

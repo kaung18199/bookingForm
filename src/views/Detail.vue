@@ -87,7 +87,10 @@
           <div></div>
           
           <!-- button -->
-          <button class=" bg-orange-400 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-orange-500 hover:shadow-lg" @click="bookingNow">
+          <button class=" bg-orange-400 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-orange-500 hover:shadow-lg" @click="bookingNow" v-if="name != null && email != null && phone != null && address != null && payment != null && date != null && time != null">
+              Booking
+          </button>
+          <button class=" bg-orange-400 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-orange-500 hover:shadow-lg" @click="bookingNowError" v-if="name == null && email == null && phone == null && address == null && payment == null && date == null && time == null">
               Booking
           </button>
         </div>
@@ -123,6 +126,14 @@ import LayoutVue from '../components/Layout.vue'
           title: 'Pending!',
           text: 'Your Booking is Pending State',
           icon: 'success',
+          // confirmButtonText: 'Cool'
+        })
+      },
+      bookingNowError () {
+        Swal.fire({
+          title: 'error!',
+          text: 'You need some info for booking',
+          icon: 'error',
           // confirmButtonText: 'Cool'
         })
       },
