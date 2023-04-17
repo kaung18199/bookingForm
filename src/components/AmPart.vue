@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex"
+import { mapActions,mapGetters } from "vuex"
   export default {
     name : 'AmPart',
     data () {
@@ -16,6 +16,11 @@ import { mapActions } from "vuex"
         bookingTime : '',
       }
       
+    },
+    computed: {
+      ...mapGetters({
+        time : 'time'
+      })
     },
     methods: {
       ...mapActions({
@@ -26,6 +31,9 @@ import { mapActions } from "vuex"
         this.bookingTime = time;
         this.timeAction(time);
       },
+    },
+    mounted () {
+      this.bookingTime = this.time;
     }
   }
 </script>

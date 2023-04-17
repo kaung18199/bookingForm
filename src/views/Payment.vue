@@ -11,7 +11,7 @@
           <div class=" flex justify-center items-center mx-auto my-20">
             <div class=" px-4 py-5 my-6 space-y-8">
               <div class=" ">
-                  <p class="text-sm sm:text-base md:text-lg font-medium text-gray-600"><i class="fa-regular fa-face-smile-beam mr-2 text-orange-400"></i>Please, Choose the Payment Type</p>
+                  <p class="text-sm sm:text-base md:text-lg font-medium text-gray-600 flex justify-start item-center "><img src="https://scontent.fmdl4-4.fna.fbcdn.net/v/t39.30808-6/317742048_138669532307614_7369569818320890056_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFbtaqcmjqlyDvOTPLnx70KmcGUx5054kaZwZTHnTniRkqP7SvgoUYvrTqA-pbH5W_KX9e4vVIJLYGhSdDbsvNL&_nc_ohc=UDu04bRM3McAX8ehMS5&_nc_oc=AQkD2UXHxat06kxt9ufq48UYfiy_fzHVy4oFQRqib8iKLTX-5opQH5KNRdmJnSQUaQjYEhr31f8jRSK5WbL1dXeQ&_nc_ht=scontent.fmdl4-4.fna&oh=00_AfDgHQx4uIx28JWdkwh02a6WwJ2oDZsq_In6rAgwOZhHeg&oe=643DCDE4" class=" w-8 h-8 mr-4 rounded-full mb-1" alt="">Please, Choose the Payment Type</p>
               </div>
               <div class=" grid grid-cols-2 gap-4">
                 <div class=" flex justify-between items-center border-2 border-orange-200 rounded-full py-2 px-4 hover:bg-orange-300 hover:bg-opacity-50 hover:shadow-lg cursor-pointer hover:border-orange-400 transition ease-in-out duration-700" :class="payment == 'KBZ pay' ? 'bg-orange-300 bg-opacity-50 shadow-lg border-orange-400' : ''" @click="Kaction()">
@@ -45,8 +45,8 @@
           <div></div>
           <div >
           
-            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()" v-if="payment != null">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
-            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" v-if="payment == null">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()" v-if="payment != null">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" v-if="payment == null">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
           </div> 
           <!-- button -->
           <!-- <button class=" bg-indigo-500 px-10 py-2 text-white rounded cursor-pointer hover:bg-blue-600" @click="bookingNow" v-if="!timeDateSelect">

@@ -14,9 +14,11 @@
               
               <div class=" grid grid-cols-2 gap-4 ">
                 <div class=" col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1">
-                  <div class=" mt-8 mb-2">
-                      <p class=" text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
+                  <div class=" mt-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2" :class="bookingDate ? 'mb-2' : 'mb-2 sm:mb-2 md:mb-7 lg:mb-2'">
+                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
+                    <p class=" text-sm text-orange-400" v-if="bookingDate">({{bookingDate}})</p>
                   </div>
+                  
                   <div class=" w-full col-span-1">
                       
                             <div class="  p-2 sm:p-3 md:p-2 lg:p-4 border shadow">
@@ -24,7 +26,7 @@
                           
                               
                                 <div class=" w-full overflow-y-hidden h-full">
-                                  <FullCalendar v-bind:options="calendarOptions" ref="calendar" @select="handleSelect" /> 
+                                  <FullCalendar v-bind:options="calendarOptions" ref="calendar" @select="handleSelect" :events="events"/> 
                                 </div>
                                 <!-- <FullCalendar :options="calendarOptions" /> -->
                                 <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -36,8 +38,9 @@
                     </div>
                 </div>
                 <div class=" h-full col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1">
-                  <div class=" mt-8 mb-2">
-                      <p class=" text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
+                  <div class=" mt-8 mb-2 sm:mb-2 md:mb-7 lg:mb-2">
+                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
+                      
                   </div>
                   <div class="col-span-1 h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow">
 
@@ -72,8 +75,7 @@
             <div></div>
             <div v-if="timeDateSelect">
             
-            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()" v-if="date != '' && time != ''">Next<i class="fa-solid fa-angles-right ml-2 "></i></button>
-              <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" v-if="date == '' || time == ''">Next<i class="fa-solid fa-angles-right ml-2 "></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()" >Next<i class="fa-solid fa-angles-right ml-2 "></i></button>
             </div> 
             
           </div>
@@ -109,7 +111,9 @@ export default {
       amPart : true,
       pmPart : false,
       bookingDate : '',
-      date : '',
+      events : [],
+      event : '',
+      daten : '',
       startdate : '',
       enddate : '',
       inputBoxHasValue: '',
@@ -139,7 +143,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      date : "date",
+      date : 'date',
       time : 'time'
     })
   },
@@ -149,10 +153,10 @@ export default {
     }),
 
     handleDateClick(info) {
-      this.date = info.date;
+      this.daten = info.date;
+      
 
-
-      this.bookingDate = this.date.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-')
+      this.bookingDate = this.daten.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-')
       this.dateAction(this.bookingDate);
     },
 
@@ -163,6 +167,7 @@ export default {
       // You can use startDate and endDate here to do whatever you need to do
 
       this.bookingDate =  this.startdate.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-') + ' -- ' +  this.enddate.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-');
+
       this.dateAction(this.bookingDate);
     },
 
@@ -176,9 +181,11 @@ export default {
     },
     
     continueClick(){
-      this.$router.push({
-        name : 'enterInfo'
-      })
+      if(this.date != null && this.time != null){
+        this.$router.push({
+          name : 'enterInfo'
+        })
+      }
     },
     openTimeDate(){
       this.timeDateSelect = true;
@@ -191,6 +198,7 @@ export default {
       this.amPart = false;
       this.pmPart = true;
     },
+    plugins: [dayGridPlugin]
   },
   components: {
     FullCalendar,LayoutVue,AmPartVue,PmPartVue
@@ -202,6 +210,8 @@ export default {
     const calendarApi = this.$refs.calendar.getApi();
     calendarApi.on('dateClick', this.handleDateClick);
     calendarApi.on('dayCellDidMount', this.handleDayCellDidMount);
+    console.log(this.time);
+    this.bookingDate = this.date;
   },
   
   

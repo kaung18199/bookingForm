@@ -87,11 +87,11 @@
           <div></div>
           
           <!-- button -->
-          <button class=" bg-orange-400 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-orange-500 hover:shadow-lg" @click="bookingNow" v-if="name != null && email != null && phone != null && address != null && payment != null && date != null && time != null">
-              Booking
+          <button class=" bg-orange-400 px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-orange-500 hover:shadow-lg" @click="bookingNow" v-if="name != null && email != null && phone != null && address != null && payment != null && date != null && time != null">
+              Book now !
           </button>
-          <button class=" bg-orange-400 px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-orange-500 hover:shadow-lg" @click="bookingNowError" v-if="name == null && email == null && phone == null && address == null && payment == null && date == null && time == null">
-              Booking
+          <button class=" bg-orange-400 px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer hover:bg-orange-500 hover:shadow-lg" @click="bookingNowError" v-if="name == null && email == null && phone == null && address == null && payment == null && date == null && time == null">
+              Book now !
           </button>
         </div>
       </div>
