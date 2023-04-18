@@ -1,17 +1,17 @@
 <template>
   <div>
-    <div class=" grid grid-cols-4 mx-2 sm:mx-5 md:mx-10 lg:mx-20 my-2 sm:my-5 md:my-8 lg:my-10 bg-white  rounded-2xl shadow-xl border-t border-gray-100
+    <div class=" h-screen sm:h-screen md:h-auto grid grid-cols-1 mx-2 sm:mx-5 md:mx-10 lg:mx-20 my-2 sm:my-5 md:my-8 lg:my-10 bg-white  rounded-2xl shadow-xl border-t border-gray-100
         ">
-        <div class=" col-span-4">
+        <div class=" col-span-1">
           <LayoutVue/>
         </div>
-        <div class=" col-span-4 ">
+        <div class=" col-span-1">
           
           
           <div class=" flex justify-center items-center mx-auto max-w-[600px] md:max-w-[500px] px-0 sm:px-2 md:px-2 lg:px-4">
-            <div class=" px-4 py-5 my-0 sm:my-0 md:my-6 lg:my-6 space-y-8 w-full border rounded-0 sm:rounded md:rounded-2xl shadow">
+            <div class=" px-4 py-5 my-0 sm:my-0 md:my-6 lg:my-6 space-y-8 w-full border-0 sm:border  rounded-0 sm:rounded md:rounded-2xl ">
               <div class=" ">
-                  <p class="text-sm sm:text-md  md:text-lg font-medium text-gray-600 flex justify-start item-center"> <img src="https://scontent.fmdl4-4.fna.fbcdn.net/v/t39.30808-6/317742048_138669532307614_7369569818320890056_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFbtaqcmjqlyDvOTPLnx70KmcGUx5054kaZwZTHnTniRkqP7SvgoUYvrTqA-pbH5W_KX9e4vVIJLYGhSdDbsvNL&_nc_ohc=UDu04bRM3McAX8ehMS5&_nc_oc=AQkD2UXHxat06kxt9ufq48UYfiy_fzHVy4oFQRqib8iKLTX-5opQH5KNRdmJnSQUaQjYEhr31f8jRSK5WbL1dXeQ&_nc_ht=scontent.fmdl4-4.fna&oh=00_AfDgHQx4uIx28JWdkwh02a6WwJ2oDZsq_In6rAgwOZhHeg&oe=643DCDE4" class=" w-8 h-8 mr-4 rounded-full mb-1" alt=""> Please, Fill this Form</p>
+                  <p class="text-sm sm:text-md  md:text-lg font-medium text-gray-600 flex justify-start item-center"> <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/317742048_138669532307614_7369569818320890056_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFbtaqcmjqlyDvOTPLnx70KmcGUx5054kaZwZTHnTniRkqP7SvgoUYvrTqA-pbH5W_KX9e4vVIJLYGhSdDbsvNL&_nc_ohc=dGlMejJjPtYAX9NuIB8&_nc_oc=AQk62pb1dlankrCQUEaMa0M-vQd-4QbZfsolYd4rR60NYDMWFl5DelZf4OKSV63T752sczMgyPL-U7E-v5wstqEY&_nc_ht=scontent-sin6-3.xx&oh=00_AfBWYh078cLzqqWb4KveHwMa9nCY8-XFl0vK9HT0Kj-QUQ&oe=6443BCA4" class=" w-8 h-8 mr-4 rounded-full mb-2" alt=""> Please, Fill this Form</p>
               </div>
               <div class="relative">
                   <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full " placeholder=" " v-model="namen"/>
@@ -39,7 +39,7 @@
             </div>
           </div>
         </div>
-      <div class=" col-span-4">
+      <div class=" col-span-1 h-[0px] sm:h-[0px] md:h-auto">
         <div class=" flex justify-between items-center p-5 border-t-2">
           <div  class=" cursor-pointer " @click="prePage()"><i class="fa-solid fa-arrow-left mr-2"></i>back</div>
           <div></div>

@@ -9,19 +9,19 @@
             <LayoutVue/>
           </div>
           
-          <div class="col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-4 px-5 sm:px-5 md:px-5 lg:px-5 pb-5 " >
+          <div class="col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-4 px-2 sm:px-2 md:px-5 lg:px-5 pb-5 " >
               <!-- booking form -->
               
               <div class=" grid grid-cols-2 gap-4 ">
-                <div class=" col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1">
+                <div class=" col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2">
                   <div class=" mt-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2" :class="bookingDate ? 'mb-2' : 'mb-2 sm:mb-2 md:mb-7 lg:mb-2'">
                       <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
-                    <p class=" text-sm text-orange-400" v-if="bookingDate">({{bookingDate}})</p>
+                    
                   </div>
                   
                   <div class=" w-full col-span-1">
-                      
-                            <div class="  p-2 sm:p-3 md:p-2 lg:p-4 border shadow">
+                            <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="bookingDate">({{bookingDate}})</p>
+                            <div class="  p-2 sm:p-3 md:p-2 lg:p-4 border shadow max-w-[500px] mx-auto">
                               
                           
                               
@@ -37,13 +37,15 @@
                       
                     </div>
                 </div>
-                <div class=" h-full col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1">
+                <div class=" h-full col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2">
                   <div class=" mt-8 mb-2 sm:mb-2 md:mb-7 lg:mb-2">
                       <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
-                      
+                    
                   </div>
-                  <div class="col-span-1 h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow">
-
+                  <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="bookingDate">({{bookingDate}})</p>
+                  <div class="col-span-1 max-w-[500px] mx-auto h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow">
+                    
+                    
                     <div class="w-full flex justify-center items-center py-4 border-b space-x-2">
                       <div class=" border px-4 py-2 rounded font-medium cursor-pointer hover:bg-orange-400 hover:text-white transition ease-in-out duration-700 shadow" :class="amPart == true ? 'bg-orange-400 text-white' : ''" @click="amPartAction()">AM</div>
                       <i class="fa-solid fa-arrows-left-right"></i>
@@ -153,6 +155,11 @@ export default {
 
     handleDateClick(info) {
       this.daten = info.date;
+      console.log(info.date);
+      const date = new Date(this.daten);
+      const formattedDate = date.toLocaleDateString('en-US', { timeZone: 'Asia/Yangon' });
+
+      console.log(formattedDate);
 
       this.bookingDate = this.daten.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-')
       this.dateAction(this.bookingDate);
