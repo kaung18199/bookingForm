@@ -14,12 +14,12 @@
               
               <div class=" grid grid-cols-2 gap-4 ">
                 <div class=" col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2">
-                  <div class=" mt-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2" :class="bookingDate ? 'mb-2' : 'mb-2 sm:mb-2 md:mb-7 lg:mb-2'">
-                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600 cursor-pointer" @click=" dateActionN"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
+                  <div class="max-w-[500px] mx-auto mt-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1" :class="bookingDate ? 'mb-2' : 'mb-2 sm:mb-2 md:mb-7 lg:mb-2'">
+                      <p class="  text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600 cursor-pointer" @click=" dateActionN"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
                     
                   </div>
                   
-                  <div class=" w-full col-span-1">
+                  <div class=" max-w-[500px] mx-auto w-full col-span-1">
                             <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="bookingDate">{{ bookingDate }}</p>
                             <p class=" text-sm text-red-500 px-2 my-2 mb-2" v-if="dateState">! Date field need to fill</p>
 
@@ -39,35 +39,7 @@
                       
                     </div>
                 </div>
-                <div class=" h-full col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2">
-                  <div class=" mt-8 mb-2 sm:mb-2 md:mb-7 lg:mb-2">
-                      <p class=" text-base sm:text-base md:text-md cursor-pointer lg:text-lg font-medium text-gray-600" @click=" timeAction "><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
-                    
-                  </div>
-                  <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="time">{{time}}</p>
-                  <p class=" text-sm text-red-500 px-2 my-2 mb-2" v-if="timeState">! Time field need to fill</p>
-                  <div class="col-span-1 max-w-[500px] mx-auto h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow" v-if="timeSelect">
-                    
-                    
-                    <div class="w-full flex justify-center items-center py-4 border-b space-x-2">
-                      <div class=" border px-4 py-2 rounded font-medium cursor-pointer hover:bg-orange-400 hover:text-white transition ease-in-out duration-700 shadow" :class="amPart == true ? 'bg-orange-400 text-white' : ''" @click="amPartAction()">AM</div>
-                      <i class="fa-solid fa-arrows-left-right"></i>
-                      <div class=" border px-4 py-2 rounded font-medium cursor-pointer hover:bg-orange-400 hover:text-white transition ease-in-out duration-700 shadow" :class="pmPart == true ? 'bg-orange-400 text-white' : ''" @click="pmPartAction()">PM</div>
-                      
-                    </div>
-                    <div class=" p-5 grid grid-cols-1 text-center gap-3" v-if="amPart">
-                      <!-- part change -->
-                      
-                        <AmPartVue/>
-                    </div>
-                    <div class=" p-5 grid grid-cols-1 text-center gap-3" v-if="pmPart">
-                      <!-- part change -->
-                      
-                        <PmPartVue/>
-                    </div>
-                  </div>
-                  
-                </div>
+                
               </div>
             
           </div>
@@ -103,8 +75,6 @@ import listGridPlugin from '@fullcalendar/list'
 import interactionPlugin from '@fullcalendar/interaction'
 
 import LayoutVue from '../components/Layout.vue'
-import AmPartVue from '../components/AmPart.vue'
-import PmPartVue from '../components/PmPart.vue'
 
 import { mapActions,mapGetters } from 'vuex'
 
@@ -197,16 +167,13 @@ export default {
     },
     
     continueClick(){
-      if(this.date != null && this.time != null){
+      if(this.date != null ){
         this.$router.push({
-          name : 'enterInfo'
+          name : 'time'
         })
       }else{
         if(this.date == null){
           this.dateState = true;
-        }
-        if(this.time == null){
-          this.timeState = true;
         }
       }
     },
@@ -224,7 +191,7 @@ export default {
     plugins: [dayGridPlugin]
   },
   components: {
-    FullCalendar,LayoutVue,AmPartVue,PmPartVue
+    FullCalendar,LayoutVue,
   },
 
 
