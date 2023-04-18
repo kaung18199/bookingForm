@@ -26,7 +26,7 @@
                           
                               
                                 <div class=" w-full overflow-y-hidden h-full">
-                                  <FullCalendar v-bind:options="calendarOptions" ref="calendar" @select="handleSelect" :events="events"/> 
+                                  <FullCalendar v-bind:options="calendarOptions" ref="calendar" @select="handleSelect" /> 
                                 </div>
                                 <!-- <FullCalendar :options="calendarOptions" /> -->
                                 <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -133,7 +133,6 @@ export default {
           
           
         },
-        
         // selectable: true,
         selectMirror: true,
         dayMaxEvents: true,
@@ -154,7 +153,6 @@ export default {
 
     handleDateClick(info) {
       this.daten = info.date;
-      
 
       this.bookingDate = this.daten.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-')
       this.dateAction(this.bookingDate);
@@ -165,6 +163,7 @@ export default {
       this.enddate = info.end
       console.log(`Selected range: ${this.startdate} - ${this.enddate}`)
       // You can use startDate and endDate here to do whatever you need to do
+
 
       this.bookingDate =  this.startdate.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-') + ' -- ' +  this.enddate.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-');
 
