@@ -9,31 +9,33 @@
           
           
           <div class=" flex justify-center items-center mx-auto max-w-[600px] md:max-w-[500px] px-2 sm:px-2 md:px-2 lg:px-4">
-            <div class=" h-[650px] md:h-auto px-4 py-5 my-2 sm:my-2 md:my-6 lg:my-6 space-y-8 w-full border  rounded md:rounded-2xl ">
+            <div class=" h-[650px] md:h-auto px-4 py-5 my-2 sm:my-2 md:my-6 lg:my-6  w-full border  rounded md:rounded-2xl ">
               <div class=" ">
                   <p class="text-sm sm:text-md  md:text-lg font-medium text-gray-600 flex justify-start item-center"> <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/317742048_138669532307614_7369569818320890056_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFbtaqcmjqlyDvOTPLnx70KmcGUx5054kaZwZTHnTniRkqP7SvgoUYvrTqA-pbH5W_KX9e4vVIJLYGhSdDbsvNL&_nc_ohc=dGlMejJjPtYAX9NuIB8&_nc_oc=AQk62pb1dlankrCQUEaMa0M-vQd-4QbZfsolYd4rR60NYDMWFl5DelZf4OKSV63T752sczMgyPL-U7E-v5wstqEY&_nc_ht=scontent-sin6-3.xx&oh=00_AfBWYh078cLzqqWb4KveHwMa9nCY8-XFl0vK9HT0Kj-QUQ&oe=6443BCA4" class=" w-8 h-8 mr-4 rounded-full mb-2" alt=""> Please, Fill this Form</p>
               </div>
-              <div class="relative">
-                  <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full " placeholder=" " v-model="namen"/>
-                  <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4" >Name</label>
-                  <span class=" text-sm text-red-500 px-2 my-2" v-if="nameerror">! Name field need to fill</span>
-              </div>
-              <div class="relative">
-                  <input type="email" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="emailn"/>
-                  <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Email</label>
-                <span class=" text-sm text-red-500 px-2 my-2" v-if="emailerror">! Email field need to fill</span>
+              <div class=" space-y-5 mb-5 mt-2">
+                <div class="relative">
+                    <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full " placeholder=" " v-model="namen"/>
+                    <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4" >Name</label>
+                    <span class=" text-sm text-red-500 px-2 my-2" v-if="nameerror">! Name field need to fill</span>
+                </div>
+                <div class="relative">
+                    <input type="email" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="emailn"/>
+                    <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Email</label>
+                  <span class=" text-sm text-red-500 px-2 my-2" v-if="emailerror">! Email field need to fill</span>
 
-              </div>
-              <div class="relative">
-                  <input type="number" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="phonen"/>
-                  <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Phone</label>
-                <span class=" text-sm text-red-500 px-2 my-2" v-if="phoneerror">! Phone field need to fill</span>
+                </div>
+                <div class="relative">
+                    <input type="number" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="phonen"/>
+                    <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Phone</label>
+                  <span class=" text-sm text-red-500 px-2 my-2" v-if="phoneerror">! Phone field need to fill</span>
 
-              </div>
-              <div class="relative">
-                  <textarea  id="floating_filled" class="h-[280px] sm:h-[250px] md:h-auto block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="addressn"></textarea>
-                  <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Address</label>
-                <span class=" text-sm text-red-500 px-2 my-2" v-if="addresserror">! Address field need to fill</span>
+                </div>
+                <div class="relative">
+                    <textarea  id="floating_filled" class="h-[320px] sm:h-[320px] md:h-auto block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="addressn"></textarea>
+                    <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Address</label>
+                  <span class=" text-sm text-red-500 px-2 my-2" v-if="addresserror">! Address field need to fill</span>
+                </div>
               </div>
             
             </div>
