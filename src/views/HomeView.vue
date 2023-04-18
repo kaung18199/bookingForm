@@ -15,7 +15,7 @@
               <div class=" grid grid-cols-2 gap-4 ">
                 <div class=" col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2">
                   <div class=" mt-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2" :class="bookingDate ? 'mb-2' : 'mb-2 sm:mb-2 md:mb-7 lg:mb-2'">
-                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600" @click=" dateActionN"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
+                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600 cursor-pointer" @click=" dateActionN"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
                     
                   </div>
                   
@@ -41,7 +41,7 @@
                 </div>
                 <div class=" h-full col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2">
                   <div class=" mt-8 mb-2 sm:mb-2 md:mb-7 lg:mb-2">
-                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600" @click=" timeAction "><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
+                      <p class=" text-base sm:text-base md:text-md cursor-pointer lg:text-lg font-medium text-gray-600" @click=" timeAction "><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
                     
                   </div>
                   <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="time">{{time}}</p>
