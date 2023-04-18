@@ -35,6 +35,7 @@
                   <p class=" text-sm sm:text-md md:text-lg lg:text-lg font-medium text-orange-600">Visa Pay</p>
                 </div>
               </div>
+              <p class=" text-sm text-red-500 px-2 my-2 mb-2" v-if="paymentState">! Payment need to select</p>
             
             </div>
           </div>
@@ -46,7 +47,7 @@
           <div >
           
             <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()" v-if="payment != null">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
-            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" v-if="payment == null">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" v-if="payment == null" @click="paymentState = true">Next<i class="fa-solid fa-angles-right ml-2"></i></button>
           </div> 
           <!-- button -->
           <!-- <button class=" bg-indigo-500 px-10 py-2 text-white rounded cursor-pointer hover:bg-blue-600" @click="bookingNow" v-if="!timeDateSelect">
@@ -69,7 +70,7 @@ import { mapActions,mapGetters } from 'vuex'
     },
     data () {
       return {
-        
+        paymentState : false,
       }
     },
     computed: {

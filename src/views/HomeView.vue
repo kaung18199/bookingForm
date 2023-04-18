@@ -15,17 +15,19 @@
               <div class=" grid grid-cols-2 gap-4 ">
                 <div class=" col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2">
                   <div class=" mt-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2" :class="bookingDate ? 'mb-2' : 'mb-2 sm:mb-2 md:mb-7 lg:mb-2'">
-                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
+                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600" @click=" dateActionN"><i class="fa-solid text-orange-400 fa-calendar-days mr-2"></i>Confirm Date</p>
                     
                   </div>
                   
                   <div class=" w-full col-span-1">
-                            <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="bookingDate">({{bookingDate}})</p>
-                            <div class="  p-2 sm:p-3 md:p-2 lg:p-4 border shadow max-w-[500px] mx-auto">
+                            <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="bookingDate">{{ bookingDate }}</p>
+                            <p class=" text-sm text-red-500 px-2 my-2 mb-2" v-if="dateState">! Date field need to fill</p>
+
+                            <div class="  p-2 sm:p-3 md:p-2 lg:p-4 border shadow max-w-[500px] mx-auto" v-if="dateSelect">
                               
                           
                               
-                                <div class=" w-full overflow-y-hidden h-full">
+                                <div class=" w-full overflow-y-hidden h-full animate__animated animate__fadeIn">
                                   <FullCalendar v-bind:options="calendarOptions" ref="calendar" @select="handleSelect" /> 
                                 </div>
                                 <!-- <FullCalendar :options="calendarOptions" /> -->
@@ -39,11 +41,12 @@
                 </div>
                 <div class=" h-full col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2">
                   <div class=" mt-8 mb-2 sm:mb-2 md:mb-7 lg:mb-2">
-                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600"><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
+                      <p class=" text-base sm:text-base md:text-md lg:text-lg font-medium text-gray-600" @click=" timeAction "><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
                     
                   </div>
-                  <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="bookingDate">({{bookingDate}})</p>
-                  <div class="col-span-1 max-w-[500px] mx-auto h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow">
+                  <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="time">{{time}}</p>
+                  <p class=" text-sm text-red-500 px-2 my-2 mb-2" v-if="timeState">! Time field need to fill</p>
+                  <div class="col-span-1 max-w-[500px] mx-auto h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow" v-if="timeSelect">
                     
                     
                     <div class="w-full flex justify-center items-center py-4 border-b space-x-2">
@@ -109,6 +112,10 @@ export default {
   name: 'HomeView',
   data () {
     return {
+      timeState : false,
+      dateState : false,
+      dateSelect : true,
+      timeSelect : false,
       timeDateSelect : true,
       amPart : true,
       pmPart : false,
@@ -153,13 +160,16 @@ export default {
       dateAction : "dateAction"
     }),
 
+    timeAction(){
+      this.dateSelect = false;
+      this.timeSelect = true
+    },
+    dateActionN(){
+      this.timeSelect = false;
+      this.dateSelect = true
+    },
     handleDateClick(info) {
       this.daten = info.date;
-      console.log(info.date);
-      const date = new Date(this.daten);
-      const formattedDate = date.toLocaleDateString('en-US', { timeZone: 'Asia/Yangon' });
-
-      console.log(formattedDate);
 
       this.bookingDate = this.daten.toLocaleDateString('en-US',{ month: 'short', day: 'numeric', year: 'numeric' }).replace(/ /g/ '-')
       this.dateAction(this.bookingDate);
@@ -191,6 +201,13 @@ export default {
         this.$router.push({
           name : 'enterInfo'
         })
+      }else{
+        if(this.date == null){
+          this.dateState = true;
+        }
+        if(this.time == null){
+          this.timeState = true;
+        }
       }
     },
     openTimeDate(){
