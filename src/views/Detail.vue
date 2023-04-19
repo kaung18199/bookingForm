@@ -136,7 +136,7 @@ import LayoutVue from '../components/Layout.vue'
       bookingNow () {
         Swal.fire({
           title: 'Pending!',
-          text: 'Your Booking is Pending State',
+          text: 'We will contact you via given phone and email thank you',
           icon: 'success',
           // confirmButtonText: 'Cool'
         })

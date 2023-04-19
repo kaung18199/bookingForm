@@ -142,10 +142,14 @@ export default {
   .dp__month_year_row {
       display: flex;
       align-items: center;
-      height: var(--dp-month-year-row-height, 54px);
+      height: var(--dp-month-year-row-height, 61px);
       color: orange;
       box-sizing: border-box;
     margin-top: 17px;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
   .dp__month_year_select {
       width: 50%;
