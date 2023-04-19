@@ -21,7 +21,7 @@
                   </div>
                   <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="time">{{time}}</p>
                   <p class="max-w-[500px] mx-auto text-sm text-red-500 px-2 my-2 mb-2" v-if="timeState">! Time field need to fill</p>
-                  <div class="col-span-1 max-w-[500px] mx-auto h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow" >
+                  <div class="col-span-1 max-w-[500px] mx-auto h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow mb-5" >
                     
                     
                     <div class="w-full flex justify-center items-center py-4 border-b space-x-2">
@@ -55,7 +55,7 @@
             <div></div>
             <div v-if="timeDateSelect">
             
-            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded cursor-pointer disabled hover:shadow-lg" @click="continueClick()" >Next<i class="fa-solid fa-angles-right ml-2 "></i></button>
+            <button class="  bg-orange-400 hover:bg-orange-500 hover:animate-none px-4 sm:px-5 md:px-10 lg:px-20 mr-1 sm:mr-1 md:mr-1 lg:mr-4 py-2 text-white rounded text-sm sm:text-sm md:text-md lg:text-md cursor-pointer disabled hover:shadow-lg" @click="continueClick()" >Next<i class="fa-solid fa-angles-right ml-2 "></i></button>
             </div> 
             
           </div>

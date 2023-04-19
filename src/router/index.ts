@@ -1,16 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import EnterInfo from '../views/EnterInfo.vue'
 import Payment from '../views/Payment.vue'
 import Detail from '../views/Detail.vue'
 import TimeView from '../views/TimeView.vue'
+import DateView from '../views/DateView.vue'
 
 const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
+
   {
     path: '/enterInfo',
     name: 'enterInfo',
@@ -30,6 +26,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/time',
     name: 'time',
     component : TimeView
+  },
+  {
+    path: '/',
+    name: 'home',
+    component : DateView
   },
 ]
 
