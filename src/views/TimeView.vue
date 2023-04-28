@@ -1,7 +1,7 @@
 
 <template>
 
-  <div class=" ">
+  <div class="mx-auto max-w-[1000px]">
       
       <div class=" grid grid-cols-4 mx-2 sm:mx-5 md:mx-10 lg:mx-20 my-2 sm:my-5 md:my-8 lg:my-10 bg-white  rounded-2xl shadow-xl border-t border-gray-100
           ">
