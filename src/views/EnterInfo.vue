@@ -33,8 +33,13 @@
                 </div>
                 <div class="relative">
                     <textarea  id="floating_filled" class="h-[336px] sm:h-[336px] md:h-auto block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="addressn"></textarea>
-                    <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Address</label>
+                    <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">To</label>
                   <span class=" text-sm text-red-500 px-2 my-2" v-if="addresserror">! Address field need to fill</span>
+                </div>
+                <div class="relative">
+                    <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full " placeholder=" " v-model="person"/>
+                    <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4" >Person</label>
+                    <span class=" text-sm text-red-500 px-2 my-2" v-if="addreserror">! Person field need to fill</span>
                 </div>
               </div>
             
@@ -73,6 +78,7 @@ import { mapActions,mapGetters } from 'vuex'
     data () {
       return {
         namen: '',
+        person : '',
         emailn : '',
         phonen : '',
         addressn : '',
@@ -80,6 +86,7 @@ import { mapActions,mapGetters } from 'vuex'
         emailerror : false,
         phoneerror : false,
         addresserror : false,
+        addreserror : false,
       }
     },
     computed: {
@@ -97,6 +104,7 @@ import { mapActions,mapGetters } from 'vuex'
         emailAction : 'emailAction',
         phoneAction : 'phoneAction',
         addressAction : 'addressAction',
+        personAction : 'personAction'
       }),
       continueClick(){
         if(this.namen != null && this.emailn != null && this.phonen != null && this.addressn != null){
@@ -107,6 +115,7 @@ import { mapActions,mapGetters } from 'vuex'
           this.emailAction(this.emailn);
           this.phoneAction(this.phonen);
           this.addressAction(this.addressn);
+          this.personAction(this.person)
         }else{
           if(this.namen == null){
             this.nameerror = true
@@ -119,6 +128,9 @@ import { mapActions,mapGetters } from 'vuex'
           }
           if(this.addressn == null){
             this.addresserror = true
+          }
+          if(this.person == null){
+            this.addreserror = true
           }
         }
       },

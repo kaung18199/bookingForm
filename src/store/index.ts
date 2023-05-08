@@ -14,11 +14,15 @@ export default createStore({
     atId : null,
     messengerId : null,
     carIndex : null,
-    airportId : null
+    airportId : null,
+    person : null
   },
   getters: {
     name(state){
       return state.name;
+    },
+    person(state){
+      return state.person;
     },
     email(state){
       return state.email;
@@ -57,6 +61,9 @@ export default createStore({
   mutations: {
     setName(state,data){
       state.name = data
+    },
+    setPerson(state,data){
+      state.person = data
     },
     setEmail(state,data){
       state.email = data
@@ -129,7 +136,12 @@ export default createStore({
     carIndexAction({commit},data){
       commit('setCarIndex',data)
     },
+    personAction({commit},data){
+      commit('setPerson',data)
+    },
     async bookingAction({commit},data){
+      console.log(data);
+      
       const res = axios.post('https://chatbot-api.neptunestaging.xyz/api/booking',data);
       console.log(
         res

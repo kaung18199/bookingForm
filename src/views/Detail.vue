@@ -72,7 +72,7 @@
                     
                   </div>
                   <div class=" space-y-2">
-                    <h2 class=" text-sm font-medium ">{{ carIndex }}</h2>
+                    <h2 class=" text-sm font-medium ">{{ person }}</h2>
                     <p class=" text-xs text-orange-300">Persons</p>
                   </div>
                   
@@ -131,6 +131,7 @@ import moment from 'moment';
     },
     computed: {
       ...mapGetters({
+        person : 'person',
         name : 'name',
         email : 'email',
         phone : 'phone',
@@ -169,8 +170,8 @@ import moment from 'moment';
             to : this.address,
             booking_date : this.formattedDates,
             booking_time : this.time,
-            persons : this.carIndex,
-            payment : this.payment
+            payment : this.payment,
+            person : this.person
           };
           this.bookingAction(this.data)
         }
@@ -182,6 +183,12 @@ import moment from 'moment';
           icon: 'success',
           // confirmButtonText: 'Cool'
         })
+
+        this.$router.push({
+          name : 'success'
+        })
+
+
       },
       bookingNowError () {
         Swal.fire({

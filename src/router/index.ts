@@ -4,6 +4,7 @@ import Payment from '../views/Payment.vue'
 import Detail from '../views/Detail.vue'
 import TimeView from '../views/TimeView.vue'
 import DateView from '../views/DateView.vue'
+import SuccessView from '../views/SuccessPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
 
@@ -31,6 +32,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'home',
     component : DateView,
+  },
+  {
+    path: '/success',
+    name: 'success',
+    component : SuccessView,
   },
 ]
 
