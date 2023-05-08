@@ -84,7 +84,7 @@ import { mapActions,mapGetters } from 'vuex'
       }),
       continueClick(){
         this.$router.push({
-          name : 'detail'
+          name : 'detail',
         })
       },
       prePage(){

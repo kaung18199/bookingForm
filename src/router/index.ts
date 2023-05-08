@@ -30,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component : DateView
+    component : DateView,
   },
 ]
 

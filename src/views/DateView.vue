@@ -23,7 +23,7 @@
                   <div class=" ">
 
                                 <div class=" max-w-[500px] mx-auto shadow mb-5 ">
-                                  <VueDatePicker v-model="dates" range :partial-range="false"  :inline="true" ></VueDatePicker>
+                                  <VueDatePicker v-model="dates"  :enableTimePicker="false" :partial-range="false"  :inline="true" ></VueDatePicker>
                                 </div>
                                 <!-- <FullCalendar :options="calendarOptions" /> -->
                                 <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -63,15 +63,28 @@ import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import moment from 'moment';
 import {mapActions,mapGetters} from 'vuex'
+// import { useRoute } from 'vue-router'
 
 export default {
+  // setup() {
+  //   const route = useRoute()
+
+  //   return {
+  //     form: route.query.form,
+  //     city: route.query.city
+  //   }
+  // },
   name: 'HomeView',
   data () {
     return {
       dates  :null,
       dateState : false,
       formattedDate : '',
-      bookingDate : ''
+      bookingDate : '',
+      for_what : '',
+      at_id : '',
+      messenger_id : '',
+      car_index : ''
     };
   },
   computed: {
@@ -79,19 +92,29 @@ export default {
       date : 'date'
     }),
     formattedDates() {
-      const startDate = moment(this.dates[0]).format('DD-MM-YYYY');
-      const endDate = moment(this.dates[1]).format('DD-MM-YYYY');
+      const startDate = moment(this.dates).format('DD-MM-YYYY');
+      // const endDate = moment(this.dates[1]).format('DD-MM-YYYY');
       
-      return `${startDate} to ${endDate}`;
+      return `${startDate}`;
     }
   },
   methods: {
     ...mapActions({
-      dateAction : 'dateAction'
+      dateAction : 'dateAction',
+      forWhatAction : 'forWhatAction',
+      atIdAction : 'atIdAction',
+      messengerIdAction : 'messengerIdAction',
+      carIndexAction : 'carIndexAction',
+      airportIdAction : 'airportIdAction'
     }),
     continueClick(){
       if(this.dates != null ){
-        this.dateAction(this.dates)
+        this.dateAction(this.dates);
+        this.forWhatAction(this.for_what);
+        this.atIdAction(this.at_id);
+        this.messengerIdAction(this.messenger_id);
+        this.carIndexAction(this.car_index);
+        this.airportIdAction(this.airport_id);
         this.$router.push({
           name : 'time'
         })
@@ -109,6 +132,11 @@ export default {
     this.dates = this.date
     console.log(this.time);
     this.bookingDate = this.date;
+    this.for_what = this.$route.query.for;
+    this.at_id = this.$route.query.at_id;
+    this.messenger_id = this.$route.query.messenger_id;
+    this.car_index = this.$route.query.car_index;
+    this.airport_id = this.$route.query.airport_id;
   },
   
   

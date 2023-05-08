@@ -44,7 +44,7 @@
                   </div>
                   <div class=" space-y-2">
                     <p class=" text-sm font-medium ">{{ address }}</p>
-                    <p class=" text-xs text-orange-300">Address</p>
+                    <p class=" text-xs text-orange-300">To</p>
                   </div>
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
@@ -63,6 +63,17 @@
                   <div class=" space-y-2">
                     <h2 class=" text-sm font-medium ">{{ time }}</h2>
                     <p class=" text-xs text-orange-300">Booking Time</p>
+                  </div>
+                  
+                </div>
+                <div class=" flex justify-start items-center space-x-8 border-b py-2">
+                  <div>
+                    <i class="fa-solid fa-users text-xl text-orange-400"></i>
+                    
+                  </div>
+                  <div class=" space-y-2">
+                    <h2 class=" text-sm font-medium ">{{ carIndex }}</h2>
+                    <p class=" text-xs text-orange-300">Persons</p>
                   </div>
                   
                 </div>
@@ -100,16 +111,19 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters,mapActions } from 'vuex'
 import LayoutVue from '../components/Layout.vue'
-  import Swal from 'sweetalert2'
-  import moment from 'moment';
+import Swal from 'sweetalert2'
+import moment from 'moment';
 
   export default {
     name : 'DetailView',
     data () {
       return {
-        dates: ''
+        dates: '',
+        form : '',
+        city : '',
+        data : ''
       }
     },
     components: {
@@ -124,16 +138,44 @@ import LayoutVue from '../components/Layout.vue'
         payment : 'payment',
         date : 'date',
         time : 'time',
+        forWhat : 'forWhat',
+        atId : 'atId',
+        messengerId : 'messengerId',
+        carIndex : 'carIndex',
+        airportId : 'airportId'
       }),
       formattedDates() {
-        const startDate = moment(this.dates[0]).format('DD-MM-YYYY');
-        const endDate = moment(this.dates[1]).format('DD-MM-YYYY');
+        const startDate = moment(this.dates).format('DD-MM-YYYY');
       
-        return `${startDate} to ${endDate}`;
+        return `${startDate}`;
       }
     },
     methods: {
+      ...mapActions({
+        bookingAction : 'bookingAction'
+      }),
       bookingNow () {
+        
+        if(this.forWhat == 'airport'){
+          this.data = {
+            name : this.name,
+            for : this.forWhat,
+            messenger_id : this.messengerId,
+            airport_id : this.airportId,
+            at_id : this.atId,
+            car_index : this.carIndex,
+            email : this.email,
+            phone : this.phone,
+            to : this.address,
+            booking_date : this.formattedDates,
+            booking_time : this.time,
+            persons : this.carIndex,
+            payment : this.payment
+          };
+          this.bookingAction(this.data)
+        }
+        
+        
         Swal.fire({
           title: 'Pending!',
           text: 'We will contact you via given phone and email thank you',
@@ -157,7 +199,9 @@ import LayoutVue from '../components/Layout.vue'
     },
     mounted () {
       this.dates = this.date
-    }
+    },
+    
   }
+  
 </script>
 

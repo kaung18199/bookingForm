@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import axios from 'axios';
 
 export default createStore({
   state: {
@@ -9,6 +10,11 @@ export default createStore({
     payment : null,
     date : null,
     time : null,
+    forWhat : null,
+    atId : null,
+    messengerId : null,
+    carIndex : null,
+    airportId : null
   },
   getters: {
     name(state){
@@ -31,6 +37,21 @@ export default createStore({
     },
     time(state){
       return state.time;
+    },
+    forWhat(state){
+      return state.forWhat
+    },
+    airportId(state){
+      return state.airportId
+    },
+    atId(state){
+      return state.atId
+    },
+    messengerId(state){
+      return state.messengerId
+    },
+    carIndex(state){
+      return state.carIndex
     },
   },
   mutations: {
@@ -55,6 +76,21 @@ export default createStore({
     setTime(state,data){
       state.time = data
     },
+    setForWhat(state,data){
+      state.forWhat = data
+    },
+    setAirportId(state,data){
+      state.airportId = data
+    },
+    setAtId(state,data){
+      state.atId = data
+    },
+    setMessengerId(state,data){
+      state.messengerId = data
+    },
+    setCarIndex(state,data){
+      state.carIndex = data
+    },
   },
   actions: {
     nameAction({commit},data){
@@ -78,7 +114,30 @@ export default createStore({
     timeAction({commit},data){
       commit('setTime',data)
     },
+    forWhatAction({commit},data){
+      commit('setForWhat',data)
+    },
+    airportIdAction({commit},data){
+      commit('setAirportId',data)
+    },
+    messengerIdAction({commit},data){
+      commit('setMessengerId',data)
+    },
+    atIdAction({commit},data){
+      commit('setAtId',data)
+    },
+    carIndexAction({commit},data){
+      commit('setCarIndex',data)
+    },
+    async bookingAction({commit},data){
+      const res = axios.post('https://chatbot-api.neptunestaging.xyz/api/booking',data);
+      console.log(
+        res
+      );
+      
+    }
   },
   modules: {
+    
   }
 })
