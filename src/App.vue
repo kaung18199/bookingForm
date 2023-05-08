@@ -15,9 +15,9 @@
 
 <style >
 .animate__fadeIn{
-  --animate-duration: 2s;
+  --animate-duration: 0.5s;
 }
   .animate__fadeOut{
-    --animate-duration: 2s;
+    --animate-duration: 0.5s;
   }
 </style>

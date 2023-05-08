@@ -139,10 +139,10 @@ export default createStore({
     personAction({commit},data){
       commit('setPerson',data)
     },
-    async bookingAction({commit},data){
+    bookingAction({commit},data){
       console.log(data);
       
-      const res = axios.post('https://chatbot-api.neptunestaging.xyz/api/booking',data);
+      const res =  axios.post('https://chatbot-api.neptunestaging.xyz/api/booking',data);
       console.log(
         res
       );

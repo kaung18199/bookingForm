@@ -40,7 +40,7 @@ import { mapActions,mapGetters } from "vuex"
 
 <style >
   .animate__animated {
-    --animate-duration: 2s;
+    --animate-duration: 1s;
   }
 </style>
 
