@@ -171,7 +171,7 @@ import moment from 'moment';
             booking_date : this.formattedDates,
             booking_time : this.time,
             payment : this.payment,
-            person : this.person
+            persons : this.person
           };
           this.bookingAction(this.data)
         }
