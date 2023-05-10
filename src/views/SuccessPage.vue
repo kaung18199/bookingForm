@@ -1,7 +1,7 @@
 
 <template>
 
-  <div class="mx-auto max-w-[1000px] h-[100vh]">
+  <div class="mx-auto h-[100vh]">
       
       <div class=" flex justify-center items-center  mx-2 mx-auto h-full bg-gradient-to-r from-blue-500 
           ">
