@@ -19,7 +19,7 @@
                       <p class=" text-base sm:text-base md:text-md cursor-pointer lg:text-lg font-medium text-gray-600" @click=" timeAction "><i class="fa-solid text-orange-400 fa-clock mr-2"></i>Confirm Time</p>
                     
                   </div>
-                  <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4" v-if="time">{{time}}</p>
+                  <p class=" text-sm text-orange-400 border max-w-[500px] mx-auto py-2 rounded px-4 mb-4 shadow" v-if="time">{{time}}</p>
                   <p class="max-w-[500px] mx-auto text-sm text-red-500 px-2 my-2 mb-2" v-if="timeState">! Time field need to fill</p>
                   <div class="col-span-1 max-w-[500px] mx-auto h-[518px] md:h-[518px] lg:h-[534px] overflow-hidden overflow-y-auto border shadow mb-5" >
                     

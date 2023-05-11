@@ -175,14 +175,6 @@ import moment from 'moment';
           };
           this.bookingAction(this.data)
         }
-        
-        
-        Swal.fire({
-          title: 'Pending!',
-          text: 'We will contact you via given phone and email thank you',
-          icon: 'success',
-          // confirmButtonText: 'Cool'
-        })
 
         this.$router.push({
           name : 'success'

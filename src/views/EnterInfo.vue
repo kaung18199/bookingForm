@@ -8,39 +8,79 @@
         <div class=" col-span-1">
           
           
-          <div class=" flex justify-center items-center mx-auto max-w-[600px] md:max-w-[500px] px-2 sm:px-2 md:px-2 lg:px-4">
+          <div class=" flex justify-center items-center mx-auto max-w-[600px] md:max-w-[600px] px-2 sm:px-2 md:px-2 lg:px-4">
             <div class="  md:h-auto px-4 py-5 my-2 sm:my-2 md:my-6 lg:my-6  w-full border  rounded md:rounded-2xl ">
               <div class=" ">
                   <p class="text-sm sm:text-md  md:text-lg font-medium text-gray-600 flex justify-start item-center">  Please, Fill this Form</p>
               </div>
               <div class=" space-y-5 mb-5 mt-5">
-                <div class="relative">
+                <!-- <div class="relative">
                     <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full " placeholder=" " v-model="namen"/>
                     <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4" >Name</label>
                     <span class=" text-sm text-red-500 px-2 my-2" v-if="nameerror">! Name field need to fill</span>
+                </div> -->
+                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                  <div>
+                    <p class=" text-bold text-sm md:text-base">Name</p>
+                    <small class=" text-orange-400">This is customer's name</small>
+                  </div>
+                  <input type="text" placeholder="ender your name" v-model="namen" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
+                  <small class=" text-xs text-red-500 px-2 my-2" v-if="nameerror">! Name field need to fill</small>
                 </div>
-                <div class="relative">
+                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                  <div>
+                    <p class=" text-bold text-sm md:text-base">Email</p>
+                    <small class=" text-orange-400">This is customer's email</small>
+                  </div>
+                  <input type="text" placeholder="ender your email" v-model="emailn" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
+                  <span class=" text-xs text-red-500 px-2 my-2" v-if="emailerror">! Email field need to fill</span>
+                </div>
+                <!-- <div class="relative">
                     <input type="email" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="emailn"/>
                     <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Email</label>
-                  <span class=" text-sm text-red-500 px-2 my-2" v-if="emailerror">! Email field need to fill</span>
-
+                  <span class=" text-sm text-red-500 px-2 my-2" v-if="emailerror">! Email field need to fill</span> -->
+                
+                <!-- </div> -->
+                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                  <div>
+                    <p class=" text-bold text-sm md:text-base">Phone</p>
+                    <small class=" text-orange-400">This is customer's phone</small>
+                  </div>
+                  <input type="number" placeholder="ender your phone number" v-model="phonen" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
+                  <span class=" text-xs text-red-500 px-2 my-2" v-if="phoneerror">! Phone field need to fill</span>
                 </div>
-                <div class="relative">
+                <!-- <div class="relative">
                     <input type="number" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="phonen"/>
                     <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Phone</label>
                   <span class=" text-sm text-red-500 px-2 my-2" v-if="phoneerror">! Phone field need to fill</span>
 
+                </div> -->
+                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                  <div>
+                    <p class=" text-bold text-sm md:text-base">Person</p>
+                    <small class=" text-orange-400">This is how many person count?</small>
+                  </div>
+                  <input type="number" placeholder="ender person count" v-model="personn" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
+                  <span class=" text-xs text-red-500 px-2 my-2" v-if="personerr">! Person field need to fill</span> 
                 </div>
-                <div class="relative">
+                <!-- <div class="relative">
                     <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full " placeholder=" " v-model="personn"/>
                     <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4" >Person</label>
                   <span class=" text-sm text-red-500 px-2 my-2" v-if="personerr">! Person field need to fill</span> 
+                </div> -->
+                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                  <div>
+                    <p class=" text-bold text-sm md:text-base">To</p>
+                    <small class=" text-orange-400">This is where you want to go?</small>
+                  </div>
+                  <textarea name="" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700" v-model="addressn" id="" cols="30" rows="3" placeholder="ender to"></textarea>
+                  <span class=" text-xs text-red-500 px-2 my-2" v-if="addresserror">! Address field need to fill</span>
                 </div>
-                <div class="relative">
+                <!-- <div class="relative">
                     <textarea  id="floating_filled" class="h-[300px] sm:h-[300px] md:h-auto block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900  dark:bg-gray-700 border-0 border-b-2 border-orange-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer w-full" placeholder=" " v-model="addressn"></textarea>
                     <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">To</label>
                   <span class=" text-sm text-red-500 px-2 my-2" v-if="addresserror">! Address field need to fill</span>
-                </div>
+                </div> -->
                 
                 
               </div>

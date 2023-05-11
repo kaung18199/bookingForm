@@ -23,7 +23,7 @@
                   <div class=" ">
 
                                 <div class=" max-w-[500px] mx-auto shadow mb-5 ">
-                                  <VueDatePicker v-model="dates"  :enableTimePicker="false" :partial-range="false"  :inline="true" ></VueDatePicker>
+                                  <VueDatePicker v-model="dates" auto-apply :enableTimePicker="false" :partial-range="false"  :inline="true" ></VueDatePicker>
                                 </div>
                                 <!-- <FullCalendar :options="calendarOptions" /> -->
                                 <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -107,6 +107,10 @@ export default {
       carIndexAction : 'carIndexAction',
       airportIdAction : 'airportIdAction'
     }),
+
+    selectDate(date){
+      console.log(date);
+    },
     continueClick(){
       if(this.dates != null ){
         this.dateAction(this.dates);
@@ -274,6 +278,19 @@ export default {
       color: var(--dp-text-color);
       font-size: var(--dp-preview-font-size, 0.8rem);
       opacity: 0;
+  }
+  .dp__calendar {
+      position: relative;
+      padding-bottom: 15px;
+  }
+  .dp__month_year_row {
+      display: flex;
+      align-items: center;
+      height: var(--dp-month-year-row-height, 61px);
+      color: orange;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      margin-top: 20px;
   }
   .dp__theme_light {
       --dp-background-color: #fff;
