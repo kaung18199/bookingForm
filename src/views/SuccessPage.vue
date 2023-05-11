@@ -91,7 +91,7 @@
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-hand-holding-dollar text-xl text-orange-400"></i>
+                    <i class="fa-solid fa-layer-group text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-sm font-medium ">{{ forWhat }}</h2>
@@ -101,7 +101,7 @@
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-hand-holding-dollar text-xl text-orange-400"></i>
+                    <i class="fa-solid fa-plane-departure text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-sm font-medium ">{{ airportId }}</h2>
@@ -111,7 +111,7 @@
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-hand-holding-dollar text-xl text-orange-400"></i>
+                    <i class="fa-solid fa-location-dot text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-sm font-medium ">{{ atId }}</h2>
@@ -121,7 +121,7 @@
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-hand-holding-dollar text-xl text-orange-400"></i>
+                    <i class="fa-solid fa-car text-xl text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-sm font-medium ">{{ carIndex }}</h2>
