@@ -1,18 +1,18 @@
 <template>
   <div class="mx-auto max-w-[1000px]">
-    <div class=" grid grid-cols-8 mx-2 sm:mx-5 md:mx-10 lg:mx-20 my-2 sm:my-5 md:my-8 lg:my-10 bg-white  rounded-2xl shadow-xl border-t border-gray-100
+    <div class=" grid grid-cols-8 mx-2 sm:mx-5 md:mx-10 lg:mx-20 my-2 sm:my-5 md:my-8 lg:my-10 bg-white  rounded-2xl shadow-xl border-t border-gray-100 relative overflow-hidden
         ">
         <div class=" col-span-8 text-center">
-          <h2 class=" text-3xl text-bold mt-8 text-blue-500">Booking Success</h2>
-          <p class=" text-blue-500 ">Thank for Your booking , We will approve after checking </p>
+          <h2 class=" text-3xl font-extrabold mt-8 text-blue-500">Booking Success</h2>
+          <p class=" text-blue-500 font-medium px-4">Thank for Your booking , We will approve after checking </p>
         </div>
         
-        <div class=" col-span-8 md:col-span-4">
+        <div class=" col-span-8 md:col-span-8 z-3">
           
           
-          <div class=" flex justify-center items-center mx-auto ">
+          <div class=" flex justify-center items-center mx-auto">
             <div class=" px-4 py-5 my-6  w-[500px] ">
-              <div class=" border rounded-2xl px-4 py-2 shadow">
+              <div class=" border rounded-2xl px-4 py-2 shadow bg-gray-100 bg-opacity-20 relative " style="z-index:1">
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
                     <i class="fa-solid fa-user text-xl text-orange-400"></i>
@@ -111,7 +111,7 @@
                 </div>
                 <div class=" flex justify-start items-center space-x-8 border-b py-2">
                   <div>
-                    <i class="fa-solid fa-location-dot text-xl text-orange-400"></i>
+                    <i class="fa-solid fa-location-dot text-xl ml-2 text-orange-400"></i>
                   </div>
                   <div class=" space-y-2">
                     <h2 class=" text-sm font-medium ">{{ atId }}</h2>
@@ -134,9 +134,9 @@
             </div>
           </div>
         </div>
-      <div class="col-span-8 md:col-span-4 my-auto mx-auto">
-        <img src="https://us.123rf.com/450wm/redcollegiya/redcollegiya1709/redcollegiya170900336/86730240-thank-you-lettering-vector-handwritten-text-card-template.jpg?ver=6" alt="" class="my-auto w-[300px] md:w-auto rounded-full ">
-      </div>
+      
+        <img src="/logo.jpg" alt="" class="my-auto w-[200px] sm:w-[200px] md:w-[300px] rounded-full absolute bottom-[0px] right-[0px] md:right-[0px] z-0 ">
+      
     </div>
   </div>
 </template>

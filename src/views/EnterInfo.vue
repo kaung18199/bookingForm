@@ -19,20 +19,20 @@
                     <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4" >Name</label>
                     <span class=" text-sm text-red-500 px-2 my-2" v-if="nameerror">! Name field need to fill</span>
                 </div> -->
-                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                <div class=" p-3 bg-gray-300 rounded bg-opacity-10 shadow">
                   <div>
-                    <p class=" text-bold text-sm md:text-base">Name</p>
-                    <small class=" text-orange-400">This is customer's name</small>
+                    <p class=" text-bold text-sm md:text-base text-orange-500">Name</p>
+                    <small class=" text-gray-400">This is customer's name</small>
                   </div>
-                  <input type="text" placeholder="ender your name" v-model="namen" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
+                  <input type="text" placeholder="ender  name" v-model="namen" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
                   <small class=" text-xs text-red-500 px-2 my-2" v-if="nameerror">! Name field need to fill</small>
                 </div>
-                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                <div class=" p-3 bg-gray-300 rounded bg-opacity-10 shadow">
                   <div>
-                    <p class=" text-bold text-sm md:text-base">Email</p>
-                    <small class=" text-orange-400">This is customer's email</small>
+                    <p class=" text-bold text-sm md:text-base text-orange-500">Email</p>
+                    <small class=" text-gray-400">This is customer's email</small>
                   </div>
-                  <input type="text" placeholder="ender your email" v-model="emailn" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
+                  <input type="text" placeholder="ender  email" v-model="emailn" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
                   <span class=" text-xs text-red-500 px-2 my-2" v-if="emailerror">! Email field need to fill</span>
                 </div>
                 <!-- <div class="relative">
@@ -41,12 +41,12 @@
                   <span class=" text-sm text-red-500 px-2 my-2" v-if="emailerror">! Email field need to fill</span> -->
                 
                 <!-- </div> -->
-                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                <div class=" p-3 bg-gray-300 rounded bg-opacity-10 shadow">
                   <div>
-                    <p class=" text-bold text-sm md:text-base">Phone</p>
-                    <small class=" text-orange-400">This is customer's phone</small>
+                    <p class=" text-bold text-sm md:text-base text-orange-500">Phone</p>
+                    <small class=" text-gray-400">This is customer's phone</small>
                   </div>
-                  <input type="number" placeholder="ender your phone number" v-model="phonen" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
+                  <input type="number" placeholder="ender  phone number" v-model="phonen" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
                   <span class=" text-xs text-red-500 px-2 my-2" v-if="phoneerror">! Phone field need to fill</span>
                 </div>
                 <!-- <div class="relative">
@@ -55,10 +55,10 @@
                   <span class=" text-sm text-red-500 px-2 my-2" v-if="phoneerror">! Phone field need to fill</span>
 
                 </div> -->
-                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                <div class=" p-3 bg-gray-300 rounded bg-opacity-10 shadow">
                   <div>
-                    <p class=" text-bold text-sm md:text-base">Person</p>
-                    <small class=" text-orange-400">This is how many person count?</small>
+                    <p class=" text-bold text-sm md:text-base text-orange-500">Person</p>
+                    <small class=" text-gray-400">This is count of people</small>
                   </div>
                   <input type="number" placeholder="ender person count" v-model="personn" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700">
                   <span class=" text-xs text-red-500 px-2 my-2" v-if="personerr">! Person field need to fill</span> 
@@ -68,10 +68,10 @@
                     <label for="floating_filled" class="absolute text-sm text-orange-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-orange-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4" >Person</label>
                   <span class=" text-sm text-red-500 px-2 my-2" v-if="personerr">! Person field need to fill</span> 
                 </div> -->
-                <div class=" p-3 bg-blue-500 rounded bg-opacity-10 shadow">
+                <div class=" p-3 bg-gray-300 rounded bg-opacity-10 shadow">
                   <div>
-                    <p class=" text-bold text-sm md:text-base">To</p>
-                    <small class=" text-orange-400">This is where you want to go?</small>
+                    <p class=" text-bold text-sm md:text-base text-orange-500">To</p>
+                    <small class=" text-gray-400">This is where you live </small>
                   </div>
                   <textarea name="" class="text-sm border rounded w-full px-4 py-2 mt-2 bg-blue-500 bg-opacity-20 focus:outline-none text-gray-700" v-model="addressn" id="" cols="30" rows="3" placeholder="ender to"></textarea>
                   <span class=" text-xs text-red-500 px-2 my-2" v-if="addresserror">! Address field need to fill</span>
